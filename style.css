@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdAsk2GmumcGWZ2qklmV74hKlNmznSx.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center; 
+}
+
+::selection {
+  color: #59058a;
+  background: #3445db;
+}
+
+header {
+  margin: 1rem;
+  background-color: #2412c7;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+header h1 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+header p {
+  margin-top: 5px;
+  color: #e60a0a;
+  font-size: 20px;
+}
+
+.wrapper {
+  max-width: 410px;
+  background: #2004bd;
+  border-radius: 7px;
+  padding: 20px 25px 0;
+  transition: height 0.2s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper.active {
+  height: 530px;
+}
+
+.form {
+  margin: 20px 0 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form :where(input, button) {
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: 0.1s ease;
+}
+
+.form input {
+  font-size: 18px;
+  padding: 0 17px;
+  border: 1px solid #1e11ce;
+}
+
+.form input:focus {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+
+.form input::placeholder {
+  color: #999;
+}
+
+.form button {
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 17px;
+  background: #ec1505;
+}
+
+.qr-code {
+  opacity: 0;
+  display: flex;
+  padding: 33px 0;
+  border-radius: 5px;
+  align-items: center;
+  pointer-events: none;
+  justify-content: center;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.wrapper.active .qr-code {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.05s ease;
+}
+
+.qr-code img {
+  width: 170px;
+}
+
+@media (max-width: 430px) {
+  header {
+    margin: 0.5rem;
+    padding: 0.25rem;
+  }
+
+  header h1 {
+    font-size: 25px;
+  }
+
+  header p {
+    color: #e00606;
+    font-size: 18px;
+  }
+
+  .wrapper {
+    padding: 16px 20px;
+  }
+
+  .form :where(input, button) {
+    height: 52px;
+  }
+
+  .qr-code img {
+    width: 160px;
+  }
+}
